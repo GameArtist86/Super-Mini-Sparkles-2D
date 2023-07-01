@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,8 +20,31 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.right * horizontalInput * _speed * Time.deltaTime);
-        transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
+        Vector3 direction = new Vector3 (horizontalInput, verticalInput, 0);
+        
+        //transform.Translate(Vector3.right * horizontalInput * _speed * Time.deltaTime);
+       // transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
 
+
+        transform.Translate (direction * _speed * Time.deltaTime);
+
+        if (transform.position.y >= 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0, 0);
+
+        }
+        else if (transform.position.y <= -4.4f)
+        {
+            transform.position = new Vector3(transform.position.x, -4.4f, 0);
+
+        }
+        if (transform.position.x >= 9f)
+        {
+            transform.position = new Vector3(-9f, transform.position.y, 0);
+        }
+        else if (transform.position.x <= -9f)
+        {
+            transform.position = new Vector3(9f, transform.position.y, 0);
+        }
 }
 }
