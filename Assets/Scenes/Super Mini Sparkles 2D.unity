@@ -363,5 +363,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Super Mini Sparkles
       objectReference: {fileID: 0}
+    - target: {fileID: 8687718643331635000, guid: 3b43e60ba48dc3243b6e9712732224ea,
+        type: 3}
+      propertyPath: _canFire
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687718643331635000, guid: 3b43e60ba48dc3243b6e9712732224ea,
+        type: 3}
+      propertyPath: _fireRate
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b43e60ba48dc3243b6e9712732224ea, type: 3}

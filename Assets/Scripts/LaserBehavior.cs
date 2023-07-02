@@ -20,7 +20,7 @@ public class LaserBehavior : MonoBehaviour
     {
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
 
-        if (transform.position.y >= 8.0f)
+        if (transform.position.y >= 5.5f)
         {
             Destroy(_laserPrefab);
         }

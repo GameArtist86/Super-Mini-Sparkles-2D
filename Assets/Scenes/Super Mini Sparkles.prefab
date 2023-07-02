@@ -109,3 +109,6 @@ MonoBehaviour:
   _speed: 3.5
   _laseerPrefab: {fileID: 7283332402166122024, guid: f8126ea762d0bac4eaa6c089e2793e5f,
     type: 3}
+  y: 0.8
+  _canFire: -1
+  _fireRate: 0.5
