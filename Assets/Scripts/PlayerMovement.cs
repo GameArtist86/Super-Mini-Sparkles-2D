@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float _fireRate = .15f;
     [SerializeField]
-    private int _lives = 4;
+    private int _lives = 3;
     // Start is called before the first frame update
     void Start()
     {
