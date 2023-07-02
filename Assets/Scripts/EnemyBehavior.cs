@@ -6,9 +6,6 @@ public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 4.0f;
-    [SerializeField]
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +21,24 @@ public class EnemyBehavior : MonoBehaviour
         if (transform.position.y < -4.4f)
         {
             transform.position = new Vector3(randomX, 4.4f, 0);
+
+        }
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+            {
+            Destroy(this.gameObject);
+        }
+if (other.tag == "Laser")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
     }
-}
+        
+    }
+
+
+
