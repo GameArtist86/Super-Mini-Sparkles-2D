@@ -7,7 +7,7 @@ public class LaserBehavior : MonoBehaviour
     [SerializeField]
     private float _speed = 8.0f;
     [SerializeField]
-    private GameObject _laserPrefab;
+    private UnityEngine.GameObject _laserPrefab;
    
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,20 @@ public class LaserBehavior : MonoBehaviour
 
         if (transform.position.y >= 5.5f)
         {
-            Destroy(_laserPrefab);
+            //Check if object has parent
+            if (transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject);
+
+            }
+
+            //then destroy parent
+
+
+            Destroy(gameObject);
+
         }
     }
+
+
 }

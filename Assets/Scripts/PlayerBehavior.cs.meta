@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: aa4094f20c8eb01478873efade79aa8d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _laseerPrefab: {fileID: 6212378831864532760, guid: f8126ea762d0bac4eaa6c089e2793e5f,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
