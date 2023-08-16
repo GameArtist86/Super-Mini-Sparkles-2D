@@ -13,28 +13,21 @@ public class SpawnManager : MonoBehaviour
     PlayerBehavior _player;
     private bool _stopSpawning = false;
     [SerializeField]
-    UnityEngine.GameObject _tripleShot;
+    UnityEngine.GameObject[] powerup;
 
 
     void Start()
     {
         _player = GameObject.Find("Super Mini Sparkles").GetComponent<PlayerBehavior>();
-        StartCoroutine(_SpawnEnemyRoutine());
-        StartCoroutine(_SpawnPowerup3ShotRoutine());
+        StartCoroutine(SpawnEnemyRoutine());
+        StartCoroutine(SpawnPowerup3ShotRoutine());
         if (_player == null)
         {
             Debug.LogError("Player is NULL");
         }
     }
 
-
-    void Update()
-    {
-
-    }
-
-
-    private IEnumerator _SpawnEnemyRoutine()
+    private IEnumerator SpawnEnemyRoutine()
     {
         while (_stopSpawning == false)
         {
@@ -52,14 +45,15 @@ public class SpawnManager : MonoBehaviour
         }
 
     }
-    private IEnumerator _SpawnPowerup3ShotRoutine()
+    private IEnumerator SpawnPowerup3ShotRoutine()
     {
         while (_stopSpawning == false) 
         {
             {
                 Vector3 posToSpawn = new Vector3(Random.Range(-9f, 9f), 4.4f, 0);
-                GameObject newTripleShot = Instantiate(_tripleShot, posToSpawn, Quaternion.identity);
-                yield return new WaitForSeconds(7.0f);
+                int randomPowerup = Random.Range(0, 3);
+                Instantiate(powerup[randomPowerup], posToSpawn, Quaternion.identity);
+                yield return new WaitForSeconds(Random.Range(3.0f, 8.0f));
                
 
             }

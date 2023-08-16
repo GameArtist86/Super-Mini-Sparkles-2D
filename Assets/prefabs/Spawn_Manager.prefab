@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6afba1035e7e94287342a50b6c40da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 3404027422421531742, guid: 366c240b664fc0b4e9d9c9c0dec4a5f3, type: 3}
+  _enemy: {fileID: 8905050221551436141, guid: 366c240b664fc0b4e9d9c9c0dec4a5f3, type: 3}
   _enemyContainer: {fileID: 3555337686286867057}
   _player: {fileID: -2756156578909030974, guid: d7da53eb3e6498b4d81f19a9274aa4ee,
     type: 3}
-  _tripleShot: {fileID: 4036030363469148262, guid: 36b648b6a4439c84a8d6efa48ae887d1,
-    type: 3}
+  powerup:
+  - {fileID: 4036030363469148262, guid: 36b648b6a4439c84a8d6efa48ae887d1, type: 3}
+  - {fileID: 8389575467072321440, guid: f79d0e0c2db923a44933b0b0d6ae88ac, type: 3}
+  - {fileID: 7756986399542491269, guid: 24ecac430c5f5d64b91f2fcd3564b0e7, type: 3}
 --- !u!1 &3555337686286867057
 GameObject:
   m_ObjectHideFlags: 0

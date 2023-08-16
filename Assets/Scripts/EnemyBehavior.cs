@@ -9,16 +9,19 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private float _speed = 4.0f;
     [SerializeField]
-    GameObject _player;
+    GameObject _shieldVisualizer;
+    [SerializeField]
+    private PlayerBehavior _player;
 
-    void Start()
+    private void Start()
     {
-
+       _player = GameObject.Find("Super Mini Sparkles").GetComponent<PlayerBehavior>();
     }
+
+
 
     void Update()
     {
-
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
 
         if (transform.position.y < -4.4f)
@@ -31,6 +34,20 @@ public class EnemyBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.tag == "Shield")
+        {
+            GameObject.Find("ShieldVisualizer");
+
+            if (_shieldVisualizer != null)
+            {
+                PlayerBehavior player = other.transform.GetComponent<PlayerBehavior>();
+                player.Damage();
+
+            }
+            return;
+        }
+
+
         if (other.tag == "Player")
         {
             PlayerBehavior player = other.transform.GetComponent<PlayerBehavior>();
@@ -41,13 +58,20 @@ public class EnemyBehavior : MonoBehaviour
                 player.Damage();
             }
             Destroy(this.gameObject);
+            return;
 
         }
         if (other.tag == "Laser")
         {
-            LaserBehavior laser = other.transform.GetComponent<LaserBehavior>();
+            other.transform.GetComponent<LaserBehavior>();
 
             Destroy(other.gameObject);
+            
+            if (_player != null)
+            {
+                _player.AddScore(10);
+
+            }
             Destroy(this.gameObject);
         }
     }

@@ -9,6 +9,7 @@ TagManager:
   - Container
   - background
   - PowerUp
+  - Shield
   layers:
   - Default
   - TransparentFX
